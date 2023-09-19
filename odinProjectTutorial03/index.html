@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add7(number){
+            return number + 7;
+        }
+        function multiply(a, b){
+            return a * b;
+        }
+        function capitalize(text){
+            let firstLetter = text.charAt(0).toUpperCase();
+            let lowerText = text.slice(1).toLowerCase();
+            return firstLetter + lowerText;
+        }
+        function lastLetter(text){
+            return text.charAt(text.length - 1);
+        }
+
+        function unitTest(){
+            return (
+                add7(1) === 8 &&
+                multiply(2,3) === 6 &&
+                capitalize("hello") === "Hello" &&
+                capitalize("aLoHA") === "Aloha" &&
+                lastLetter("getme") === "e"
+            )
+        }
+
+        function fizzBuzz(){
+            let wordMap = {"Fizz" : 3, "Buzz" : 5, "Bazz" : 7};
+            let input = parseInt(prompt("Enter a number"));
+            
+            for(i = 1; i <= input;i++){
+                let finalWord = "";
+                for(key in wordMap){
+                    let value = wordMap[key];
+                    if(i % value === 0){
+                        finalWord += key;
+                    }
+                }
+                (finalWord === "")? console.log(i) : console.log(finalWord);
+            }
+        }
+
+        fizzBuzz();
+
+        //(unitTest())? alert("Passed") : alert("Failed");
+    </script>
+</body>
+</html>

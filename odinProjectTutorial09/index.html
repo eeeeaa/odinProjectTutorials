@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Emmet command are basically the same as 
+        css selection command-->
+
+    <!--{} -> put text in element-->
+    <!--[] -> put function/type in element-->
+    <!--e.g. [data-selected]{Hello,World! $}.class$*5-->
+
+    <div data-selected="" class="class1">Hello,World! 1</div>
+    <div data-selected="" class="class2">Hello,World! 2</div>
+    <div data-selected="" class="class3">Hello,World! 3</div>
+    <div data-selected="" class="class4">Hello,World! 4</div>
+    <div data-selected="" class="class5">Hello,World! 5</div>
+
+    <!--emmet command example: ul.content>li.item*5-->
+    <!--create unordered list of class "content" 
+        with 5 list with class "item"-->
+
+    <ul class="content">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>
+
+    <!--if use only class name/id -> default is div 
+        e.g. .content would get-->
+    <div class="content"></div>
+
+    <!--button[type="button"]-->
+    <button type="button"></button>
+
+    <!--[data-selected]-->
+    <div data-selected="blahblah"></div>
+
+    <!-- + -> create sibling -->
+    <!--e.g. header+main+footer-->
+    <header></header>
+    <main></main>
+    <footer></footer>
+
+    <!--Grouping -> kinda like math operation-->
+    <!--(header>nav)+(main>nav)-->
+    <header>
+        <nav></nav>
+    </header>
+    <main>
+        <nav></nav>
+    </main>
+</body>
+</html>
