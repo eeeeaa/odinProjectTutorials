@@ -1,0 +1,57 @@
+h1 {
+    text-transform: uppercase;
+    text-shadow: rgb(22, 22, 22) 1px 2px;
+    letter-spacing: 1rem;
+    line-height: 2.5rem;
+    border: 2px solid black;
+    border-radius:8px 16px;
+    text-align: center;
+    box-shadow: 12px 12px 2px 1px rgb(78, 78, 78);
+}
+
+.overflowing {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* you can use the same format as emmet for these combinator as well*/
+/* e.g. ul > li[class="a"]*/
+
+/* desendant combinator -> select all child/grand-child*/
+main div {
+    /* Our cool CSS */
+}
+
+/**** child combinator -> select only direct children*/
+
+/* This rule will only select divs with a class of child */
+main > div {
+    /* Our cool CSS */
+}
+  
+/* This rule will only select divs with a class of grand-child */
+main > div > div {
+    /* More cool CSS */
+}
+
+/**** sibling combinator -> select first adjacent elements/sibling*/
+
+/* This rule will only select the div with the class child group2 
+(the first sibling of group1) */
+.group1 + div {
+    /* Our cool CSS */
+}
+
+/* This rule will only select the div with the class child group3 
+(the first sibling of group2, which is the first sibling of group1) */
+.group1 + div + div {
+    /* More cool CSS */
+}
+
+/**** general sibling combinator -> select all element siblings */
+
+/* This rule will select all of .group1's siblings - in this case the 2nd and 3rd .child divs */
+.group1 ~ div {
+    /* Our cool CSS */
+}

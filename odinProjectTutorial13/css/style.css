@@ -1,0 +1,56 @@
+a:link {
+    color: orange;
+}
+a:visited {
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.container > :first-child{
+    font-size: 150%;
+}
+
+.container > :first-child::first-line {
+    color: red;
+} 
+
+tr:nth-child(even){
+    background-color: #333;
+    color:white;
+}
+
+tr:nth-child(odd){
+    background-color: white;
+}
+
+.container-02 > h2 + p {
+    color: red;
+}
+
+.list > li {
+    list-style: none;
+    border-bottom: 1px solid gray;
+}
+
+.list-02 li {
+    padding: 8px;
+}
+
+.list-02 a {
+    border: 5px solid grey;
+}
+
+.list-02 a[title] { /*check if attribute exists*/
+    border: 5px solid pink;
+}
+
+.list-02 a[href*="contact"] {/*check if attribute contains value*/
+    border-color: orange;
+}
+
+.list-02 a[href^="https"] {/*check if attribute starts with value*/
+    border-color: green;
+}
