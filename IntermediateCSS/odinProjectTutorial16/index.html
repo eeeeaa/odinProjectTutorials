@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <form class="form-card" action="example.com/path" method="post">
+        <!--id can be linked with the label attribute "for"
+        , name/value -> variable name for backend (when send to api)-->
+
+        <fieldset>
+            <legend>Other comments</legend>
+            <textarea rows="10" cols="80">Write comments here...</textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <select name="Car" id="car_type">
+                <option value="mercedes">Mercedes</option>
+                <option value="tesla" selected>Tesla</option>
+                <option value="volvo">Volvo</option>
+                <option value="bmw">BMW</option>
+                <option value="mini">Mini</option>
+                <option value="ford">Ford</option>
+            </select>
+            <select name="fashion">
+                <optgroup label="Clothing">
+                    <option value="t_shirt">T-Shirts</option>
+                    <option value="sweater">Sweaters</option>
+                    <option value="coats">Coats</option>
+                </optgroup>
+                <optgroup label="Foot Wear">
+                    <option value="sneakers">Sneakers</option>
+                    <option value="boots">Boots</option>
+                    <option value="sandals">Sandals</option>
+                </optgroup>
+            </select>
+            <div class="radio">
+                <!--radio buttons ->
+                    same name attribute view as same group of radio buttons-->
+                <h4>Ticket Type</h4>
+                <div>
+                    <input type="radio" id="child" name="ticket_type" value="child">
+                    <label for="child">Child</label>
+                </div>
+                <div>
+                    <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+                    <label for="adult">Adult</label>
+                </div>
+            </div>
+            <div class="radio">
+                <!--Like radio, but can select multiple options-->
+                <h4>Pizza Toppings</h4>
+                <div>
+                    <input type="checkbox" id="sausage" name="topping" value="sausage" checked>
+                    <label for="sausage">Sausage</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="onions" name="topping" value="onions">
+                    <label for="onions">Onions</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pepperoni" name="topping" value="pepperoni" checked>
+                    <label for="pepperoni">Pepperoni</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="amount">Water drank per day:</label>
+            <input type="number" id="amount" name="amount">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        </fieldset>
+
+        <fieldset>
+            <legend>Login</legend>
+            <label for="user_email">Email Address:</label>
+            <input type="email" name="email" id="user_email" placeholder="example@email.com">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="password...">
+        </fieldset>
+
+        <!--
+            submit -> default type, send user data
+            reset -> clear user data
+            button -> generic button type, usually used with JS 
+            (should declare button type to "button" 
+            for when using button thats not for submitting form)
+        -->
+        <button type="submit">Login</button>
+        <button type="reset">Reset</button>
+        <button type="button">Click to Toggle</button>
+    </form>
+</body>
+
+</html>
