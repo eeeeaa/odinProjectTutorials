@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Josefin Sans", sans-serif;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        form>div {
+            margin-bottom: 20px;
+        }
+
+        select {
+            appearance: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 3px;
+            right: 10px;
+            position: absolute;
+        }
+
+        button,
+        label,
+        input,
+        select,
+        progress,
+        meter {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"],
+        input[type="color"],
+        select {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            /*remove system-level styling*/
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            width: 1em;
+            height: 1em;
+            border: 1px solid gray;
+            /* Adjusts the position of the checkboxes on the text baseline */
+            vertical-align: -2px;
+            /* Set here so that Windows' High-Contrast Mode can override */
+            color: green;
+        }
+
+        input[type="checkbox"]::before {
+            content: "✔";
+            position: absolute;
+            font-size: 1.2em;
+            right: -1px;
+            top: -0.3em;
+            visibility: hidden;
+        }
+
+        input[type="checkbox"]:checked::before {
+            /* Use `visibility` instead of `display` to avoid recalculating layout */
+            visibility: visible;
+        }
+
+        input[type="checkbox"]:disabled {
+            border-color: black;
+            background: #ddd;
+            color: gray;
+        }
+
+        input[type="search"] {
+            appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <p>
+            <label for="search">search: </label>
+            <input id="search" name="search" type="search" />
+        </p>
+        <p>
+            <label for="text">text: </label>
+            <input id="text" name="text" type="text" />
+        </p>
+        <p>
+            <label for="date">date: </label>
+            <input id="date" name="date" type="datetime-local" />
+        </p>
+        <fieldset>
+            <legend>Fruit preferences</legend>
+
+            <p>
+                <label>
+                    <input type="checkbox" name="fruit" value="cherry" />
+                    I like cherry
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="fruit" value="banana" disabled />
+                    I can't like banana
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="fruit" value="strawberry" />
+                    I like strawberry
+                </label>
+            </p>
+        </fieldset>
+        <p>
+            <label for="search">Search</label>
+            <input type="search" name="search" id="search">
+        </p>
+        <p><input type="submit" value="submit" /></p>
+        <p><input type="button" value="button" /></p>
+    </form>
+</body>
+
+</html>

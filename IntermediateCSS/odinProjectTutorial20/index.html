@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form li+li {
+            margin-top: 1em;
+        }
+
+        form li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h2>Edit your preferences</h2>
+        <ul>
+            <li>
+                <label for="e-mail">Email</label>
+                <input type="email" name="e-mail" id="e-mail">
+
+            </li>
+            <li>
+                <label for="website">Website</label>
+                <input type="url" name="website" id="website">
+            </li>
+            <li>
+                <label for="phone">Phone number</label>
+                <input type="tel" name="phone" id="phone">
+            </li>
+            <li>
+                <label for="fave-color">Favorite color</label>
+                <input type="color" name="fave-color" id="fave-color">
+            </li>
+            <li>
+                <label for="datetime">datetime</label>
+                <input type="datetime-local" name="datetime" id="datetime" />
+            </li>
+            <li>
+                <label for="month">month</label>
+                <input type="month" name="month" id="month" />
+            </li>
+            <li>
+                <label for="time">time</label>
+                <input type="time" name="time" id="time" />
+            </li>
+            <li>
+                <label for="week">week</label>
+                <input type="week" name="week" id="week" />
+            </li>
+            <li>
+                <label for="myDate">When are you available this summer?</label>
+                <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" step="7" id="myDate" />
+            </li>
+            <li>
+                <label for="max-invite">Select maximum number of invitations</label>
+                <input type="range" name="max-invite" id="max-invite" min="1" max="30" value="10">
+                <output class="invite-output">Current Output here</output>
+            </li>
+            <li>
+                <select id="groups" name="groups">
+                    <optgroup label="fruits">
+                        <option>Banana</option>
+                        <option selected>Cherry</option>
+                        <option>Lemon</option>
+                    </optgroup>
+                    <optgroup label="vegetables">
+                        <option>Carrot</option>
+                        <option>Eggplant</option>
+                        <option>Potato</option>
+                    </optgroup>
+                </select>
+            </li>
+            <li>
+                <select id="multi" name="multi" multiple size="4">
+                    <optgroup label="fruits">
+                        <option>Banana</option>
+                        <option selected>Cherry</option>
+                        <option>Lemon</option>
+                    </optgroup>
+                    <optgroup label="vegetables">
+                        <option>Carrot</option>
+                        <option>Eggplant</option>
+                        <option>Potato</option>
+                    </optgroup>
+                </select>
+            </li>
+            <li>
+                <label for="myFruit">What's your favorite fruit?</label>
+                <input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+                <datalist id="mySuggestion">
+                    <option>Apple</option>
+                    <option>Banana</option>
+                    <option>Blackberry</option>
+                    <option>Blueberry</option>
+                    <option>Lemon</option>
+                    <option>Lychee</option>
+                    <option>Peach</option>
+                    <option>Pear</option>
+                </datalist>
+            </li>
+            <li>
+                <label for="temp">Choose a comfortable temperature:</label><br />
+                <input type="range" id="temp" name="temp" list="markers" />
+
+                <datalist id="markers">
+                    <option value="0"></option>
+                    <option value="25"></option>
+                    <option value="50"></option>
+                    <option value="75"></option>
+                    <option value="100"></option>
+                </datalist>
+            </li>
+            <li>
+                <meter min="0" max="100" value="75" low="33" high="66" optimum="0">75</meter>
+            </li>
+            <li>
+                <progress max="100" value="75">75/100</progress>
+            </li>
+            <li>
+                <button>Update preferences</button>
+            </li>
+        </ul>
+    </form>
+    <script>
+        const input = document.querySelector("#max-invite");
+        const output = document.querySelector(".invite-output");
+        output.textContent = input.value;
+
+        input.addEventListener("input", () => {
+            output.textContent = input.value;
+        });
+    </script>
+</body>
+
+</html>
