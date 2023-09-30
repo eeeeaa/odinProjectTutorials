@@ -1,0 +1,203 @@
+/*
+ Flexbox -> good for alignment/1D/etc.
+ Grid -> good for layout/2D/etc.
+
+ Grid line -> line between row or column cells 
+ (i.e. 3 cells lined up horizontally have 4 column line and two row line)
+
+ Grid cell -> one empty space unit of a grid
+ Grid area -> a group of connected cells
+ Grid track -> any single row or column of the grid
+
+ Note: you can use dev inspect tool to see grid outline
+ explicit grid -> grid that we defined
+ implicit grid -> grid that wasn't defined but add automatically
+                i.e. more children than defined grid
+
+    grid-auto-flow -> 
+    where it will auto add implicit grid (on new row? or new column? etc.)
+*/
+
+.container {
+    display: grid;
+    gap: 8px;
+    /*shorthand for column-gap and row-gap*/
+    /*2D grid*/
+
+    /*Implicit grid settings*/
+    grid-auto-flow: row;
+    /*default is row*/
+    grid-auto-rows: 50px;
+    /*grid-auto-flow: column;
+    grid-auto-columns: 50px;*/
+
+    /*Explicit grid settings*/
+    grid-template-columns: 50px 50px;
+    /*width for each grid cell*/
+    grid-template-rows: 50px 50px;
+    /*height for each grid cell*/
+}
+
+.container2 {
+    margin-top: 10px;
+    display: grid;
+    column-gap: 80px;
+    row-gap: 20px;
+    /*shorthand for columns and rows*/
+    grid-template: 50px 50px / 250px 50px 50px;
+}
+
+.container div,
+.container2 div {
+    border: 1px solid black;
+}
+
+.container3 {
+    /*Note: each line can be named as well (also, one line can have multiple names)*/
+    /*i.e. 
+    grid-template-columns: [first] 40px [line2] 50px [line3] 
+            auto [col4-start] 50px [five] 40px [end];
+    grid-template-rows: [row1-start] 25% [row1-end] 
+        100px [third-line] auto [last-line];*/
+    
+    /*i.e. 
+    grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];*/
+
+    margin-top: 10px;
+    display: inline-grid;
+    grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+    background-color: lightblue;
+}
+
+.container3 .room {
+    border: 1px solid;
+    font-size: 50%;
+    text-align: center;
+}
+
+.container3 #living-room {
+    grid-column-start: 1;
+    /*the starting column grid line*/
+    grid-column-end: 6;
+    /*the ending column grid line*/
+
+    grid-row-start: 1;
+    /*the starting row grid line*/
+    grid-row-end: 3;
+    /*the ending column grid line*/
+}
+
+.container3 #kitchen {
+    /*shorthand start/end*/
+    grid-column: 4/6;
+    grid-row: 3/6;
+}
+
+.container3 #bedroom {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.container3 #bathroom {
+    /*even shorter shorthand*/
+    /*grid-row-start / grid-column-start / grid-row-end / grid-column-end*/
+    grid-area: 3/3/6/4;
+}
+
+.container3 #closet {
+    /*dont need to put in row-end because it defaults to span one track*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+}
+
+.container4 {
+    /*Another way of using grid area -> use name and do alignment in parent container*/
+    display: inline-grid;
+    /*can use repeat function to shorthand writing size for each grid line*/
+    grid-template: repeat(6, 40px)/ repeat(5, 40px);
+    background-color: lightgreen;
+    grid-template-areas:
+        "living-room living-room living-room living-room living-room"
+        "living-room living-room living-room living-room living-room"
+        "bedroom bedroom bathroom kitchen kitchen"
+        "bedroom bedroom bathroom kitchen kitchen"
+        "closet closet bathroom kitchen kitchen"
+        "closet closet . . ."
+        /*dot indicated empty cells*/
+}
+
+.container4 .room {
+    border: 1px solid;
+    font-size: 50%;
+    text-align: center;
+}
+
+.container4 #living-room2 {
+    grid-area: living-room;
+}
+
+.container4 #kitchen2 {
+    grid-area: kitchen;
+}
+
+.container4 #bedroom2 {
+    grid-area: bedroom;
+}
+
+.container4 #bathroom2 {
+    grid-area: bathroom;
+}
+
+.container4 #closet2 {
+    grid-area: closet;
+}
+
+.wrapper {
+    /*negative value -> counting line backward from end to start*/
+    /*line -1 is the last line, -2 is second to last, etc.*/
+    /*trick: Due to this,
+    you can stretch item across grid with 1/-1 i.e. grid-column: 1/-1*/
+
+    display: inline-grid;
+    background-color: blueviolet;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 1em
+}
+
+.box1,.box2,.box3,.box4 {
+    border: 1px solid;
+}
+
+.wrapper .box1 {
+    grid-column-start: -1;
+    grid-column-end: -2;
+    grid-row-start: -1;
+    grid-row-end: -4;
+}
+
+.wrapper .box2 {
+    grid-column-start: -3;
+    grid-column-end: -4;
+    grid-row-start: -1;
+    grid-row-end: -3;
+}
+
+.wrapper .box3 {
+    grid-column-start: -2;
+    grid-column-end: -3;
+    grid-row-start: -1;
+    grid-row-end: -2;
+}
+
+.wrapper .box4 {
+    /*span x -> span the area covering x number of track*/
+    /*span name -> span the area until it hit the next line with specified name*/
+    /*i.e. grid-column: 1 / span 2 -> start at line 1 and span another 2 tracks*/
+    grid-column: 1 / span 2;
+    grid-row: 1/2;
+}
