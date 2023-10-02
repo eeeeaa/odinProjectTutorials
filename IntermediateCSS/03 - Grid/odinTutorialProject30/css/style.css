@@ -1,0 +1,63 @@
+.grid-container {
+    resize: both;
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    grid-template-rows: repeat(2, min(200px, 50%));
+    /***use case for these -> set min or max size for flexible size
+     i.e. percentage, fraction,etc.***/
+
+    /*min(x,y) -> select the least value*/
+    /*max(x,y) -> select the most value*/
+
+    /*clamp(x,ideal,y) -> clamp value between min and max value,
+     if already between those value, ideal size*/
+    /*i.e. width: clamp(500px, 80%, 1000px)*/
+    /*minmax(x,y) -> grid function that sets min and max size for a grid track*/
+
+    grid-template-columns: repeat(5, clamp(150px, 20%, 200px));
+}
+
+.grid-container-2 {
+    /**use case -> fill grid cells according to the grid container size**/
+    /*auto-fit/auto-fill -> return “the largest possible positive integer” 
+    without the grid items overflowing their container.*/
+    resize: both;
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    grid-template-rows: repeat(2, 1fr);
+    /*want as many column as possible, 
+    with size according to minmax, without overflowing the grid*/
+
+    /*auto-fit -> if enough space for first row with few item 
+    (not enough to fill one row), use max size from minmax*/
+    
+    /*auto-fill -> if enough space for first row with few item 
+    (not enough to fill one row), use min size from minmax*/
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid-item {
+    background-color: #444;
+    text-align: center;
+    color: #ddd;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 12px;
+}
+
+p {
+    margin: 12px auto 24px;
+}
+
+img {
+    height: 60px;
+}
