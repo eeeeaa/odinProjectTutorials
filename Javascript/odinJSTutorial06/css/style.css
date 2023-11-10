@@ -1,0 +1,72 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-form {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+}
+.main-form .form-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.5em;
+}
+
+.main-form .form-item .tag::before {
+  position: absolute;
+  bottom: 40px;
+  left: 150px;
+  content: "required";
+  background-color: rgb(31, 16, 73);
+  font-size: x-small;
+  padding: 0.2em 0.5em;
+  border-radius: 0.5em;
+  color: white;
+}
+
+.main-form .form-submit-button {
+  width: 200px;
+}
+
+.error-text {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  font-size: small;
+  color: red;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 200px;
+  border-radius: 0.5em;
+}
+
+input:invalid {
+  border: 1px solid red;
+}

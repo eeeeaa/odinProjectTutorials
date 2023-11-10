@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/formexercise.js" defer></script>
+  </head>
+  <body>
+    <form novalidate class="main-form">
+      <div class="form-item">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="example@mail.com"
+          required
+        />
+        <span class="email-error error-text"></span>
+      </div>
+      <div class="form-item">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          placeholder="password"
+        />
+        <span class="password-error error-text"></span>
+      </div>
+      <div class="form-item">
+        <label for="confirm-password">Confirm password</label>
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          required
+          placeholder="confirm password"
+        />
+        <span class="confirm-password-error error-text"></span>
+      </div>
+      <div class="form-item">
+        <label for="ZIP">ZIP : </label>
+        <input type="text" id="ZIP" required placeholder="000000" />
+        <span class="zip-error error-text"></span>
+      </div>
+      <div class="form-item">
+        <label for="Country">Country : </label>
+        <select id="Country" required>
+          <option value="ch" select>Switzerland</option>
+          <option value="fr">France</option>
+          <option value="de">Germany</option>
+          <option value="nl">The Netherlands</option>
+        </select>
+      </div>
+
+      <button class="form-submit-button" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
