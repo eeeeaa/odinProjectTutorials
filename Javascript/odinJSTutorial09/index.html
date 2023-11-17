@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giphy App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/gif.js" defer></script>
+  </head>
+  <body>
+    <div id="main-content">
+      <div class="nav-bar">
+        <div class="search-bar">
+          <label for="search-string">Search:</label>
+          <input type="search" name="search-string" id="search-string" />
+          <span class="search-button"></span>
+        </div>
+        <button type="button" class="get-image-button">Get new images</button>
+      </div>
+      <div class="image-container">
+        <img class="result-image" src="#" />
+        <div class="search-tag"></div>
+      </div>
+      <div class="loading-page-container">
+        <span class="loader"></span>
+      </div>
+      <div class="error-page-container">
+        <div class="error-text"></div>
+      </div>
+    </div>
+  </body>
+</html>

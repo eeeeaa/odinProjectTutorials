@@ -1,0 +1,125 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+
+html,
+body {
+  display: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #111827;
+}
+
+#main-content {
+  height: 100vh;
+  display: grid;
+  grid-template: auto 5fr / auto;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #0f766e;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-bar {
+  display: grid;
+  grid-template: auto/ 3fr 1fr;
+  padding: 1em;
+  gap: 1em;
+  background-color: #030712;
+  align-items: center;
+}
+
+.nav-bar .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.nav-bar .search-bar #search-string {
+  width: 50%;
+  appearance: none;
+  background-color: #111827;
+  border-color: transparent;
+  border-radius: 0.5em;
+}
+
+.nav-bar .search-bar .search-button {
+  width: 16px;
+  height: 16px;
+  background: no-repeat center url("../assets/ic_search.svg");
+  background-color: #1f2937;
+  border: 0.5px solid white;
+  padding: 6px;
+  border-radius: 16px;
+}
+
+.nav-bar .search-bar .search-button:hover {
+  background-color: #374151;
+  transition: all 0.1s ease;
+  transform: scale(1.1);
+}
+
+.nav-bar .get-image-button {
+  align-self: flex-end;
+  background-color: #1f2937;
+  padding: 0.5em 1em;
+  border-color: transparent;
+  border-radius: 0.5em;
+}
+
+.nav-bar .get-image-button:hover {
+  transition: all 0.1s ease;
+  background-color: #374151;
+}
+
+.image-container {
+  align-self: center;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.image-container .result-image {
+  width: 500px;
+  height: 500px;
+  border-radius: 1em;
+}
+
+.loading-page-container {
+  align-self: center;
+  justify-self: center;
+  display: none;
+}
+
+.error-page-container {
+  align-self: center;
+  justify-self: center;
+  display: none;
+}
+
+.error-page-container .error-text {
+  font-size: large;
+  font-weight: 700;
+}
