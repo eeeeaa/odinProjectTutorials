@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/animation.js" defer></script>
+  </head>
+  <body>
+    <div class="display-anim-container">
+      <p>
+        Click anywhere on the screen or press any key to toggle the
+        <code>&lt;div&gt;</code> between hidden and showing.
+      </p>
+
+      <div class="display-anim-text">
+        This is a <code>&lt;div&gt;</code> element that animates between
+        <code>display: none; opacity: 0</code> and
+        <code>display: block; opacity: 1</code>. Neat, huh?
+      </div>
+
+      <p>
+        This is another paragraph to show that <code>display: none; </code> is
+        being applied and removed on the above <code>&lt;div&gt; </code>. If
+        only its <code>opacity</code> was being changed, it would always take up
+        the space in the DOM.
+      </p>
+    </div>
+    <div class="output-container">
+      <ul id="output"></ul>
+    </div>
+    <div class="slide-text-container">
+      <p class="slide-text">
+        The Caterpillar and Alice looked at each other for some time in silence:
+        at last the Caterpillar took the hookah out of its mouth, and addressed
+        her in a languid, sleepy voice.
+      </p>
+    </div>
+    <div class="container">
+      <div id="ball"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ball {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 50%;
+  /*animation-duration: 2s;
+  animation-name: change-color;
+  animation-iteration-count: infinite; //runs forever
+  animation-direction: alternate; //go back and forth in a loop*/
+  animation: 2s change-color infinite alternate;
+}
+
+.output-container {
+  height: 100px;
+  overflow: auto;
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+.slide-text-container {
+  padding: 1em;
+  overflow: hidden;
+}
+
+.slide-text {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.display-anim-container {
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+.display-anim-text {
+  font-size: 1.6rem;
+  padding: 20px;
+  border: 3px solid red;
+  border-radius: 20px;
+  width: 480px;
+  opacity: 0;
+  display: none;
+}
+
+.fade-in {
+  display: block;
+  animation: fade-in 0.7s ease-in forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 120%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes change-color {
+  from {
+    /*0%*/
+    background-color: red;
+  }
+
+  50% {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+  }
+
+  to {
+    /*100%*/
+    background-color: green;
+  }
+}
