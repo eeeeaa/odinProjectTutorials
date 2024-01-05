@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--"width=device-width, initial-scale=1" 
+      -> set initial width of page to size of actual screen of the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <picture>
+      <!--(for art direction) change image for different devices using picture (usually different image/zoom-in/zoom-out of images)-->
+      <source media="(max-width: 799px)" srcset="./img/480p.jpg" />
+      <source media="(min-width: 800px)" srcset="./img/800p.jpg" />
+      <img src="./img/800p.jpg" alt="sample stock picture" />
+    </picture>
+    <!--(for performance) change resolution for different devices using srcset and sizes (usually same img but different resolution)-->
+    <img
+      srcset="./img/480p.jpg 480w, ./img/800p.jpg 800w"
+      sizes="(max-width: 600px) 480px,
+         800px"
+      src="./img/800p.jpg"
+      alt="sample stock image"
+    />
+    <img
+      class="object-fit-example"
+      src="https://images.unsplash.com/photo-1578241561880-0a1d5db3cb8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
+      alt=""
+    />
+    <div class="box">
+      when using max-width instead of fixed width, the element will not exceed
+      that width but will shrink if the screen is too small to accommodate it.
+    </div>
+    <div class="box2">
+      when using min-height instead of fixed height, the element will grow
+      instead of causing an overflow when the text gets cramped/no space for
+      text
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: dodgerblue;
+  padding: 32px 64px;
+  font-size: 32px;
+  color: white;
+}
+main {
+  display: flex;
+  flex: 1;
+}
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  background: palevioletred;
+  color: white;
+}
+li {
+  font-size: 24px;
+  list-style-type: none;
+}
+
+section {
+  padding: 16px;
+  margin: 16px;
+  font-size: 24px;
+  background: blanchedalmond;
+}
+
+footer {
+  height: 96px;
+  background: darkslateblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*can use stuff like min/max width/height*/
+/*max-width: apply this style to below or equal max-width*/
+/*min-width: apply this style to above or equal max-width*/
+
+/*
+- can also use something like @media screen and (max-width: 480px) 
+- possible type -> all (default), print, screen
+*/
+
+/*@media print --> use for layout on a printer*/
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+  header {
+    text-align: center;
+    padding: 24px;
+  }
+  aside {
+    width: auto;
+  }
+  ul {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 0;
+  }
+}
